@@ -1,0 +1,12 @@
+create database sp;
+use sp;
+create table student (rollno varchar(30) primary key, score int not null);
+insert into student values(1,1200);
+insert into student values(2,900);
+insert into student values(3,890);
+create table studcat (rollno varchar(30) primary key, score int not null,category varchar(30) not null);
+call proc_Grade(1,1200);
+call proc_Grade(2,900);
+call proc_Grade(3,890);
+Select * from studcat;
+select rollno,score,checkCat(score) from student;
